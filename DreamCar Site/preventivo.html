@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preventivo - DreamCar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="navbar-logo-link"><img src="Images/Logo/Dream Car Logo Nero Rosso.png" alt="DreamCar Logo" class="navbar-logo"></a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="servizi.html">Servizi</a></li>
+                    <li><a href="chi-siamo.html">Chi Siamo</a></li>
+                    <li><a href="preventivo.html" class="active">Preventivo</a></li>
+                    <li><a href="contatti.html">Contatti</a></li>
+                </ul>
+            </nav>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="quote-form-section">
+            <div class="container">
+                <div class="form-container">
+                    <h1 class="form-title">Richiesta di Preventivo</h1>
+                    <p class="form-subtitle">Compila il modulo per ricevere un preventivo dettagliato per la tua auto.</p>
+                    
+                    <form id="repair-quote-form" class="quote-form">
+                        <fieldset>
+                            <legend>Informazioni Personali</legend>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="name">Nome e Cognome</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Telefono</label>
+                                    <input type="tel" id="phone" name="phone">
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Informazioni Veicolo</legend>
+                            <div class="form-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                                <div class="form-group">
+                                    <label for="make">Marca</label>
+                                    <select id="make" name="make" required>
+                                        <option value="" disabled selected>Seleziona Marca</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="model">Modello</label>
+                                    <select id="model" name="model" required disabled>
+                                        <option value="" disabled selected>Seleziona Modello</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="year">Anno</label>
+                                    <select id="year" name="year" required>
+                                        <option value="">Seleziona Anno</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="trim">Allestimento</label>
+                                    <select id="trim" name="trim">
+                                        <option value="">Seleziona Allestimento</option>
+                                        <option value="base">Base</option>
+                                        <option value="sport">Sport</option>
+                                        <option value="luxury">Luxury</option>
+                                        <option value="premium">Premium</option>
+                                        <option value="altro">Altro</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="mileage">Chilometraggio</label>
+                                    <select id="mileage" name="mileage">
+                                        <option value="">Seleziona Chilometraggio</option>
+                                        <option value="0-10000">0 - 10.000 km</option>
+                                        <option value="10001-50000">10.001 - 50.000 km</option>
+                                        <option value="50001-100000">50.001 - 100.000 km</option>
+                                        <option value="100001-150000">100.001 - 150.000 km</option>
+                                        <option value="150001-200000">150.001 - 200.000 km</option>
+                                        <option value="200000+">Oltre 200.000 km</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="engine">Motorizzazione</label>
+                                    <input type="text" id="engine" name="engine">
+                                </div>
+                                <div class="form-group">
+                                    <label for="transmission">Tipo di Cambio</label>
+                                    <select id="transmission" name="transmission">
+                                        <option value="">Seleziona</option>
+                                        <option value="manuale">Manuale</option>
+                                        <option value="automatico">Automatico</option>
+                                        <option value="semiautomatico">Semiautomatico</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exterior-color">Colore Esterno</label>
+                                    <input type="text" id="exterior-color" name="exterior-color">
+                                </div>
+                                <div class="form-group">
+                                    <label for="license-plate">Targa</label>
+                                    <input type="text" id="license-plate" name="license-plate" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="vin">Telaio (VIN)</label>
+                                    <input type="text" id="vin" name="vin">
+                                </div>
+                                <div class="form-group">
+                                    <label for="insurance-company">Compagnia Assicurativa</label>
+                                    <select id="insurance-company" name="insurance-company">
+                                        <option value="">Seleziona Compagnia</option>
+                                        <option value="Assicurazioni Generali">Assicurazioni Generali</option>
+                                        <option value="Intesa Sanpaolo Assicurazioni">Intesa Sanpaolo Assicurazioni</option>
+                                        <option value="Allianz">Allianz</option>
+                                        <option value="Poste Vita">Poste Vita</option>
+                                        <option value="UnipolSai">UnipolSai</option>
+                                        <option value="Reale Mutua Assicurazioni">Reale Mutua Assicurazioni</option>
+                                        <option value="AXA Assicurazioni">AXA Assicurazioni</option>
+                                        <option value="Alleanza Assicurazioni">Alleanza Assicurazioni</option>
+                                        <option value="Sara Assicurazioni">Sara Assicurazioni</option>
+                                        <option value="Nobis Compagnia di Assicurazioni">Nobis Compagnia di Assicurazioni</option>
+                                        <option value="Prima Assicurazioni">Prima Assicurazioni</option>
+                                        <option value="ConTe.it">ConTe.it</option>
+                                        <option value="Allianz Direct">Allianz Direct</option>
+                                        <option value="Genertel">Genertel</option>
+                                        <option value="UniSalute">UniSalute</option>
+                                        <option value="Linear">Linear</option>
+                                        <option value="Verti">Verti</option>
+                                        <option value="Quixa">Quixa</option>
+                                        <option value="Arca Assicurazioni">Arca Assicurazioni</option>
+                                        <option value="Arag Assicurazioni">Arag Assicurazioni</option>
+                                        <option value="Ageas Assicurazioni">Ageas Assicurazioni</option>
+                                        <option value="Altro">Altro</option>
+                                    </select>
+                                </div>
+                                <div class="form-group" id="other-insurance-company-group" style="display: none;">
+                                    <label for="other-insurance-company">Altra Compagnia Assicurativa</label>
+                                    <input type="text" id="other-insurance-company" name="other-insurance-company" placeholder="Inserisci il nome della compagnia">
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Stato del Veicolo</legend>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="condition">Condizioni Generali</label>
+                                    <select id="condition" name="condition">
+                                        <option value="">Seleziona</option>
+                                        <option value="eccellenti">Eccellenti</option>
+                                        <option value="buone">Buone</option>
+                                        <option value="discrete">Discrete</option>
+                                        <option value="danneggiata">Danneggiata</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="maintenance-history">Cronologia Manutenzione</label>
+                                    <select id="maintenance-history" name="maintenance-history">
+                                        <option value="">Seleziona</option>
+                                        <option value="completa">Completa e documentata</option>
+                                        <option value="parziale">Parziale o non documentata</option>
+                                        <option value="assente">Assente</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Sinistri Precedenti</label>
+                                    <div class="radio-group">
+                                        <label for="accidents-yes"><input type="radio" id="accidents-yes" name="previous-accidents" value="si"> Sì</label>
+                                        <label for="accidents-no"><input type="radio" id="accidents-no" name="previous-accidents" value="no" checked> No</label>
+                                    </div>
+                                </div>
+                                <div class="form-group" id="previous-accidents-description-group" style="display: none;">
+                                    <label for="previous-accidents-description">Descrivi i sinistri precedenti</label>
+                                    <textarea id="previous-accidents-description" name="previous-accidents-description" rows="3" placeholder="Descrivi brevemente i sinistri precedenti..."></textarea>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Dettagli Richiesta</legend>
+                            <div class="form-group">
+                                <label>Tipo di Richiesta</label>
+                                <div class="radio-group">
+                                    <label for="repair"><input type="radio" id="repair" name="request-type" value="riparazione" checked> Riparazione</label>
+                                    <label for="accident"><input type="radio" id="accident" name="request-type" value="sinistro"> Sinistro Stradale</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="description">Descrizione del Danno o della Riparazione</label>
+                                <textarea id="description" name="description" rows="6" placeholder="Descrivi qui i dettagli dell'intervento richiesto..." required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="photo-upload">Carica Foto del Danno (Opzionale)</label>
+                                <input type="file" id="photo-upload" name="photo-upload" multiple accept="image/*">
+                            </div>
+                        </fieldset>
+
+                        <div class="form-group-full">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="privacy" required>
+                                Acconsento al trattamento dei miei dati personali secondo la <a href="privacy-policy.html" target="_blank">privacy policy</a>.
+                            </label>
+                        </div>
+
+                        <div class="form-group-full">
+                            <button type="submit" class="btn-submit">Invia Richiesta</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+            <div class="container">
+                <div class="footer-links">
+                    <p><a href="privacy-policy.html">Privacy Policy</a></p>
+                    <p><a href="termini-di-servizio.html">Termini di Servizio</a></p>
+                    <p><a href="cookie-policy.html">Cookie Policy</a></p>
+                    <p><a href="sitemap.html">Sitemap</a></p>
+                    <p>P.IVA: 12345678901</p>
+                </div>
+
+                <div class="footer-logo-info">
+                    <img src="Images/Logo/Dream Car Logo Bianco.png" alt="DreamCar Logo" class="footer-logo">
+                    <p class="copyright">&copy; 2025 DreamCar. Tutti i diritti riservati.</p>
+                </div>
+            </div>
+        </footer>
+
+    <script src="js/models.generated.js"></script>
+    <script src="js/quote-form.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

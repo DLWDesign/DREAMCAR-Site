@@ -1,0 +1,884 @@
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: transparent;
+    color: #ffffff;
+    /* padding: 1rem 0; */ /* Removed padding */
+    position: fixed; /* Use fixed to keep it at the top */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: top 0.3s ease; /* Smooth transition for top property */
+    height: 80px; /* Defined height for the header */
+    display: flex; /* Added display flex to header */
+    align-items: center; /* Align items vertically */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between; /* Push logo left, toggle right */
+    align-items: center;
+    padding: 0 20px; /* Aggiunto padding per distanziare dagli angoli */
+    width: 100%; /* Ensure container takes full width */
+    max-width: none; /* Remove max-width constraint */
+}
+
+.navbar-logo-link {
+    /* position: absolute; */ /* Removed absolute positioning */
+    /* left: 20px; */ /* Removed absolute positioning */
+    
+    /* margin-top: 100px; */
+}
+
+.nav-toggle {
+    /* position: absolute; */ /* Removed absolute positioning */
+    /* right: 20px; */ /* Removed absolute positioning */
+}
+
+.main-nav {
+    flex-grow: 1; /* Allow main-nav to take up available space */
+    display: flex; /* Make main-nav a flex container */
+    justify-content: center; /* Center its content (the ul) */
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    
+    /* justify-content: center; */ /* This is handled by .main-nav */
+}
+
+.main-nav li {
+    margin-left: 20px; 
+}
+
+.main-nav ul li a {
+    font-size: 2rem;
+}
+
+a {
+    color: #ff0000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ff0000;
+}
+
+.navbar-logo {
+    height: 120px; 
+    vertical-align: middle;
+    /* margin-right: 50px; */ /* Removed fixed margin */
+}
+
+.main-nav ul li a {
+    font-size: 2rem;
+}
+
+.nav-toggle {
+    display: none; /* Hidden by default on larger screens */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.hamburger {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #ffffff;
+    position: relative;
+}
+
+.hamburger::before, .hamburger::after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #ffffff;
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    top: 8px;
+}
+
+/* Basic responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px; /* Add horizontal padding for mobile screens */
+    }
+
+    body {
+        padding: 0; /* Ensure body padding is 0 to avoid double padding */
+    }
+
+    .full-screen-hero {
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+    }
+
+    .main-nav {
+        display: none; /* Hide navigation links by default on small screens */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 80px; /* Adjust based on header height */
+        left: 0;
+        background-color: #1e1e1e; /* Background for mobile nav */
+        padding: 1rem 0;
+    }
+
+    .main-nav.active {
+        display: flex; /* Show when active */
+    }
+
+    .main-nav ul { /* Added styles for ul */
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0; /* Remove gap for vertical stacking */
+    }
+
+    .main-nav li {
+        margin: 0;
+        text-align: center;
+        padding: 0.5rem 0;
+    }
+
+    .main-nav ul li a {
+        font-size: 1.2rem;
+        word-wrap: break-word;
+    }
+
+    .nav-toggle {
+        display: block; /* Show hamburger on small screens */
+        font-size: 1rem; /* Reduced font size for mobile */
+    }
+
+    .navbar-logo {
+        height: 120px;
+        margin-right: 0; /* Remove margin on small screens */
+    }
+
+    .hamburger {
+        width: 25px;
+    }
+
+    .hamburger::before, .hamburger::after {
+        width: 25px;
+    }
+
+    .hamburger::before {
+        top: -7px; /* Adjusted for smaller width */
+    }
+
+    .hamburger::after {
+        top: 7px; /* Adjusted for smaller width */
+    }
+
+    .hero-title {
+        font-size: 2.5rem; /* Slightly reduced font size */
+    }
+
+    h2 {
+        font-size: 1.8rem; /* Slightly reduced font size */
+    }
+
+    .full-screen-hero .hero-logo {
+        max-width: 70%; /* Adjusted for padding */
+    }
+
+    .hero-text {
+        font-size: 1.3rem; /* Slightly reduced font size */
+    }
+
+    .hero-cta a {
+        font-size: 1.1rem; /* Slightly reduced font size */
+        padding: 10px 20px; /* Adjusted for padding */
+    }
+
+    .service-item {
+        padding: 15px;
+    }
+
+    .service-item h3 {
+        font-size: 1.5rem;
+    }
+
+    .service-item p {
+        font-size: 0.9rem;
+    }
+}
+
+.hero-title {
+    text-align: center;
+    font-size: 4rem;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+
+
+
+
+
+
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.full-screen-hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../Images/BackGround/Background Image Index Black.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+    padding: 0; /* Remove padding from hero when full screen */
+}
+
+.full-screen-hero .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to the top */
+    align-items: center;
+    height: 100%;
+    padding-top: 0vh; /* Adjust this value to move content higher or lower */
+}
+
+.full-screen-hero .hero-logo {
+    max-width: 60%; /* Adjust as needed */
+    height: auto;
+    z-index: 2;
+    margin-top: -50px; /* Adjusted for mobile to prevent overlap */
+    margin-bottom: 10px; /* Added space below logo */
+}
+
+.hero-cta {
+    z-index: 3; /* Ensure it's above the logo and background */
+    margin-top: 15px; /* Space from the hero-text */
+}
+
+.hero-cta a {
+    color: #ffffff; /* White text */
+    text-decoration: none; /* Remove underline */
+    font-size: 2.5rem; /* Increased font size */
+    font-weight: bold;
+    padding: 15px 30px; /* Padding for the rectangle */
+    background-color: transparent; /* Transparent background */
+    border: 2px solid #ffffff; /* White border */
+    border-radius: 8px; /* Slightly rounded corners for the rectangle */
+    display: inline-block; /* To apply padding and background */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.hero-cta a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly visible white background on hover */
+    color: #ffffff; /* Keep text white on hover */
+    border-color: #e50914; /* Red border on hover */
+}
+
+.hero-text {
+    color: #ffffff;
+    font-size: 2rem; /* Adjust as needed */
+    font-weight: bold;
+    margin-top: 0px; /* Adjusted for mobile to prevent overlap */
+    margin-bottom: 15px; /* Space from the button */
+    z-index: 3; /* Ensure it's above the logo and background */
+}
+
+/* New sections styles */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-item {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.service-item h3 {
+    color: #e50914;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.service-item p {
+    color: #b0b0b0;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #e50914;
+    color: #ffffff;
+    padding: 10px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ff4500;
+}
+
+.mt-4 {
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    /* padding: 0 20px; */ /* Removed padding for corner placement */
+}
+
+.card {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Enhanced shadow for cards */
+}
+
+footer {
+    background-color: transparent;
+    color: #aaa;
+    padding: 10px 0;
+    text-align: center;
+    margin: 40px 0 0;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between; /* Distribute items with space between them */
+    align-items: flex-start; /* Align items to the start of the cross axis */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    gap: 5px; /* Add some gap between items */
+}
+
+.footer-logo-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center logo, P.IVA, and copyright horizontally */
+    margin-left: auto; /* Push this block to the right */
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.footer-links p {
+    margin: 0;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a img {
+    height: 30px; /* Size for social media icons */
+    width: 30px;
+    filter: invert(100%); /* Make icons white if they are dark */
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover img {
+    transform: translateY(-3px);
+}
+
+.footer-logo {
+    height: 150px; /* Adjust size as needed */
+    /* margin-left: auto; */ /* Removed as flexbox handles distribution */
+}
+
+footer a {
+    color: #e50914;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ff4500;
+}
+
+@media (max-width: 500px) {
+    footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links {
+        align-items: center;
+    }
+
+    .footer-logo {
+        height: 100px;
+        /* margin-top: 20px; */ /* Removed as it's handled by footer-logo-info */
+    }
+
+    
+}
+
+
+
+.service-icon {
+    font-size: 3rem; /* Large icon size */
+    color: #e50914; /* Icon color */
+    margin-bottom: 15px;
+    display: block; /* Ensure it takes up its own line and margin works */
+    text-align: center; /* Center the icon */
+}
+
+/* Contact Page Specific Styles */
+.contact-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    gap: 40px; /* Space between columns */
+    align-items: flex-start; /* Align items to the top */
+}
+
+.contact-info {
+    flex: 1; /* Allow contact info to grow and shrink */
+    min-width: 300px; /* Minimum width before wrapping */
+}
+
+.contact-map {
+    flex: 2; /* Allow map to take more space */
+    min-width: 300px; /* Minimum width before wrapping */
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 450px; /* Maintain a consistent height */
+    border-radius: 8px; /* Optional: match other elements' styling */
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        flex-direction: column; /* Stack items vertically on small screens */
+    }
+
+    .contact-info,
+    .contact-map {
+        flex: none; /* Remove flex grow/shrink */
+        width: 100%; /* Take full width */
+    }
+}
+
+/* Preventivo Page Specific Styles */
+.quote-form-section {
+    padding: 60px 0;
+}
+
+.form-container {
+    background-color: #1e1e1e;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.form-title {
+    text-align: center;
+    color: #ffffff;
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+
+.form-subtitle {
+    text-align: center;
+    color: #b0b0b0;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.quote-form fieldset {
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.quote-form legend {
+    color: #e50914;
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #e0e0e0;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #333;
+    color: #ffffff;
+    font-size: 1rem;
+    box-sizing: border-box; /* Ensure padding doesn't add to width */
+}
+
+.form-group input[type="file"] {
+    width: 100%;
+    padding: 12px 0;
+    color: #e0e0e0;
+}
+
+.form-group textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 100px;
+}
+
+.radio-group label,
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #e0e0e0;
+}
+
+.radio-group input[type="radio"],
+.checkbox-label input[type="checkbox"] {
+    margin-right: 10px;
+    /* Adjust size if needed */
+    transform: scale(1.2);
+}
+
+.btn-submit {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #e50914;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #ff4500;
+}
+
+.form-group-full {
+    margin-top: 20px;
+}
+
+/* Responsive adjustments for form */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 20px;
+    }
+
+    .form-title {
+        font-size: 2rem;
+    }
+
+    .form-subtitle {
+        font-size: 1rem;
+    }
+
+    .quote-form fieldset {
+        padding: 15px;
+    }
+
+    .quote-form legend {
+        font-size: 1.2rem;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr; /* Stack items vertically */
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 0.9rem;
+    }
+
+    .btn-submit {
+        font-size: 1rem;
+        padding: 12px;
+    }
+}
+
+/* Curtain Page Specific Styles */
+.curtain-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: 9999; /* Ensure it's on top of everything */
+    overflow: hidden;
+    background-color: #121212; /* Match body background */
+}
+
+.curtain-left,
+.curtain-right {
+    flex: 1;
+    background-color: #121212; /* Match body background */
+    transition: transform 1s ease-out; /* Animation duration and easing */
+}
+
+.curtain-logo-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+    opacity: 1;
+    transition: opacity 0.5s ease-out 0.5s; /* Fade out after curtains start moving */
+}
+
+.curtain-logo {
+    max-width: 80%; /* Adjust as needed */
+    height: auto;
+}
+
+/* Animation classes */
+.curtain-container.animate .curtain-left {
+    transform: translateX(-100%);
+}
+
+.curtain-container.animate .curtain-right {
+    transform: translateX(100%);
+}
+
+.curtain-container.animate .curtain-logo-container {
+    opacity: 0;
+}
+
+/* Chi Siamo Page Specific Styles */
+
+.about-us-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-us-content h2 {
+    color: #ffffff;
+}
+
+
+
+.about-us-image img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.team-member h3 {
+    font-size: 1.5rem;
+}
+
+.team-member p {
+    font-size: 1rem;
+}
+
+.why-choose-us-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.why-choose-us-item {
+    text-align: center;
+}
+
+.why-choose-us-item i {
+    font-size: 3rem;
+    color: #e50914;
+    margin-bottom: 15px;
+}
+
+.why-choose-us-item h3 {
+    font-size: 1.2rem;
+}
+
+.why-choose-us-item p {
+    font-size: 1rem;
+}
+
+@media (max-width: 992px) {
+    .about-us-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Animazione di entrata per i loghi */
+.logo-entrance-animation {
+    animation: logo-fade-in-scale-up 1.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+@keyframes logo-fade-in-scale-up {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (min-width: 769px) {
+    .full-screen-hero .container {
+        padding-top: 0vh; /* Adjust this value for web version */
+        margin-bottom: 100px;
+    }
+}
+
+/* Image Gallery Section */
+.image-gallery {
+    padding: 60px 0;
+}
+
+.image-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.gallery-item {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-item-caption {
+    padding: 20px;
+}
+
+.gallery-item-caption h4 {
+    color: #e50914;
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.gallery-item-caption p {
+    color: #b0b0b0;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
