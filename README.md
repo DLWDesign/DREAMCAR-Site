@@ -1,2 +1,2 @@
 # DREAMCAR-Site
-Template responsive per un sito di officina. Design moderno e focalizzato sulla semplicità di richiedere preventivi e visualizzare i servizi.
+Responsive template for a workshop website. Modern design focused on making it easy to request quotes and view services.
